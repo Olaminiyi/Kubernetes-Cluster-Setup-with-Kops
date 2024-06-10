@@ -77,3 +77,59 @@ Give Admnistrator access > create user
 ![alt text](images/1.11.png)
 
 **The next thing is to configure our aws with security credentials we created**
+- first make sure you have aws CLI install, if not [download and install](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- go to the command prompt
+
+```
+aws config
+```
+enter the Access key and Secret Access when prompted
+
+![alt text](images/1.12.png)
+
+- check if the profile has been set by your configuration
+- type the command below on the command prompt
+
+```
+aws sts get-caller-identity
+```
+![alt text](images/1.13.png)
+
+**Get a domain name** 
+
+**Create Hosted zone in Route53**
+
+![alt text](images/1.14.png)
+
+![alt text](images/1.15.png)
+
+This creates the ns servers url which we will add to the domain servers register in the DNS provider [123-Reg](https://www.123-reg.co.uk/).
+
+Log into your DNS provider account and update the name servers with the ns server url that was created earlier
+
+![alt text](images/1.16.png)
+
+![alt text](images/1.17.png)
+
+SSH into the EC2 instance and complete the setup.
+
+Generate ssh keys with this command
+```
+ssh-keygen
+```
+![alt text](images/1.18.png)
+
+Install awscli
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+
+![alt text](images/1.19.png)
+
+Configure it to use the access keys of the IAM user that was created.
+```
+aws configure
+```
+![alt text](images/1.20.png)
