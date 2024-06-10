@@ -192,3 +192,43 @@ $ kops create cluster --name=kubekops.olami.uk --state=s3://project-kops-states 
 ```
 
 ![alt text](images/1.26.png)
+
+
+Make sure to specify the `--node-volume-size` and `--master-volume-size` if not it will create huge volume for the etcd.
+
+Configure and create the cluster by running the command
+```
+kops update cluster --state=s3://project-kops-states --name kubekops.olami.uk --yes --admin
+```
+
+![alt text](images/1.27.png)
+
+![alt text](images/1.28.png)
+
+Wait for 15 minutes for the cluster to create.
+
+On every execution of the **'kops'** command, inclusion of the associated bucket name is mandatory. In the absence of this S3 bucker name the command will not work.
+
+Validate the cluster
+```
+kops validate cluster --state=s3://project-kops-states
+```
+![alt text](images/1.29.png)
+
+
+Upon the installation of kops, a configuration file named **.kube/config** was generated within the home directory for the purpose of executing **kubectl** commands.
+```
+cat .kube/config
+```
+![alt text](images/1.30.png)
+
+To see the nodes we run the command
+```
+kubectl get nodes
+```
+![alt text](images/1.31.png)
+
+To delete the cluster
+```
+kops delete cluster --name=kubekops.olami.uk --state=s3://project-kops-states --yes
+```
