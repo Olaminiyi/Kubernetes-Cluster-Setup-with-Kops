@@ -133,3 +133,55 @@ Configure it to use the access keys of the IAM user that was created.
 aws configure
 ```
 ![alt text](images/1.20.png)
+
+Setup kubectl and kops
+
+To setup kubectl we will refer to the [kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux).
+
+Install kubectl
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+```
+Make kubectl executable
+```
+sudo chmod +x kubectl
+```
+To make kubectl globally accessible
+```
+sudo mv kubectl /usr/local/bin/
+```
+Verify
+```
+kubectl version --client
+```
+![alt text](images/1.21.png)
+
+To setup kops we will refer to the [kops documentation](https://github.com/kubernetes/kops/releases) for various versions og kops.
+
+I will be installing version 1.29.0
+
+![alt text](images/1.22.png)
+![alt text](images/1.22.png)
+
+Copy the above link and download the binary
+```
+wget https://github.com/kubernetes/kops/releases/download/v1.29.0/kops-linux-amd64
+```
+Make kops executable
+```
+chmod +x kops-linux-amd64
+```
+To make kops globally accessible
+```
+sudo mv kops-linux-amd64 /usr/local/bin/kops
+```
+```
+kops version
+```
+![alt text](images/1.24.png)
+
+Verify domain kubekops.olami.uk
+```
+nslookup -type=ns kubekops.olami.uk
+```
+![alt text](images/1.25.png)
