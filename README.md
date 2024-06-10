@@ -185,3 +185,10 @@ Verify domain kubekops.olami.uk
 nslookup -type=ns kubekops.olami.uk
 ```
 ![alt text](images/1.25.png)
+
+Create configurations for the cluster and store in the S3 bucket using the command:
+```
+$ kops create cluster --name=kubekops.olami.uk --state=s3://project-kops-states --zones=us-east-1a,us-east-1b --node-count=2 --node-size=t3.small --master-size=t3.medium --dns-zone=kubekops.olami.uk --node-volume-size=8 --master-volume-size=8
+```
+
+![alt text](images/1.26.png)
