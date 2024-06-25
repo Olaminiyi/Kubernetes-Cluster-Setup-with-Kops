@@ -87,8 +87,8 @@ enter the Access key and Secret Access when prompted
 
 ![alt text](images/1.12.png)
 
-- check if the profile has been set by your configuration
-- type the command below on the command prompt
+- check if the profile has been set by your configuration.
+- type the command below on the command prompt.
 
 ```
 aws sts get-caller-identity
