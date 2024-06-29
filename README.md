@@ -43,7 +43,7 @@ In this instance, I will be configuring a Kubernetes cluster by employing the Ko
 
 Purchase a domain name from a domain name provider. eg godaddy.com and namesilo.com etc.
 
-Create an ubuntu EC2 instance for Kops 
+Create an ubuntu EC2 instance for Kops.
 
 ![alt text](images/1.1.png)
 
