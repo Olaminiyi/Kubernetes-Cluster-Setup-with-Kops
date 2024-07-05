@@ -1,4 +1,4 @@
-# KUBERNETES SETUP WITH KUBERNETES OPERATIONS (KOPS)
+# KUBERNETES SETUP WITH KUBERNETES OPERATIONS (KOPS).
 
 **Kops** - **"Kubernetes Operations"**, is a command-line tool used for deploying, managing, and operating Kubernetes clusters on various cloud platforms. Kubernetes is an open-source container orchestration platform that helps manage the deployment, scaling, and operation of containerized applications.
 
