@@ -105,7 +105,7 @@ aws sts get-caller-identity
 
 This creates the ns servers url which we will add to the domain servers register in the DNS provider [123-Reg](https://www.123-reg.co.uk/).
 
-Log into your DNS provider account and update the name servers with the ns server url that was created earlier
+Log into your DNS provider account and update the name servers with the ns server url that was created earlier.
 
 ![alt text](images/1.16.png)
 
